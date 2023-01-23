@@ -31,5 +31,29 @@ class Array
     final_array
   end
 
+  def my_all?(&prc)
+   
+    self.my_each{|ele| return false if !prc.call(ele)}
+
+    return true 
+    
+
+  end
+
+  def my_any?(&prc)
+    self.my_each{|ele| return true if prc.call(ele)}
+
+    return false
+    
+  end
+
+  def my_flatten
+    return[self] if 
+  end
+
+
+
+
+
 
 end
