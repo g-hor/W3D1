@@ -48,8 +48,22 @@ class Array
   end
 
   def my_flatten
-    return[self] if 
+    # final_array = []
+    return self if !self.is_a?(Array)
+    final_array = []
+
+    self.each do |ele|
+      # final_array += ele.my_flatten if ele.is_a?(Array)
+      # final_array << ele if ele.is_a?(Integer)
+      if ele.is_a?(Array)
+        final_array += ele.my_flatten
+      else
+        final_array << ele
+      end
+    end
+    final_array
   end
+
 
 
 
